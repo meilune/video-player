@@ -4,7 +4,7 @@ $dark-grey: #000D0C;
 $grey-one: #2F403E;
 $grey-two: #485958;
 $grey: #888C8C;
-$ligth: #F2F1E9;
+$light: #F2F1E9;
 $white: #fff;
 $black: #000;
 
@@ -23,6 +23,7 @@ body {
     font-family: komet,sans-serif;
     font-weight: 500;
     font-style: normal;
+    color: $light;
     &:before {
         content: "";
         position: absolute;
@@ -57,12 +58,30 @@ section {
             border-radius: 20px;
             position: relative;
             cursor: pointer;
+            video {
+                border-radius: 20px;
+                width: 100%;
+                height: auto;
+            }
         }
-        video {
-            border-radius: 20px;
-            width: 100%;
-            height: auto;
+
+}
+// Controls
+.controls-container {
+    .control-group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .controls-left {
+            display: flex;
+            flex-direction: row;
         }
+        .controls-right {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
 }
 
 @media screen and (max-width: 800px) {

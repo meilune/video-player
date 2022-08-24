@@ -14,6 +14,7 @@ body {
   font-family: komet,sans-serif;
   font-weight: 500;
   font-style: normal;
+  color: #F2F1E9;
 }
 
 body:before {
@@ -59,10 +60,43 @@ section .player {
   cursor: pointer;
 }
 
-section video {
+section .player video {
   border-radius: 20px;
   width: 100%;
   height: auto;
+}
+
+.controls-container .control-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.controls-container .control-group .controls-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.controls-container .control-group .controls-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 @media screen and (max-width: 800px) {
