@@ -25,7 +25,7 @@ body:before {
   left: 0;
   right: 0;
   height: auto;
-  background: rgba(242, 241, 233, 0.6);
+  background: rgba(72, 89, 88, 0.7);
 }
 
 h1, h2 {
@@ -34,7 +34,7 @@ h1, h2 {
   font-style: normal;
 }
 
-.container {
+section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -49,7 +49,33 @@ h1, h2 {
   height: 100vh;
 }
 
-.container video {
-  width: 1200px;
+section .player {
+  min-width: 800px;
+  max-width: 70vw;
+  border: #000D0C 5px solid;
+  background: #000D0C;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+section video {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 800px) {
+  section .player {
+    min-width: unset;
+    max-width: 95vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section .player {
+    min-width: unset;
+    max-width: 95vw;
+  }
 }
 /*# sourceMappingURL=style.css.map */
