@@ -9,4 +9,4 @@ And you can check out my design and development portfolio at https://luaru.com.a
 
 I hope you can enjoy this code as much as I did when implementing it.
 
-Yay for the #100daysofcoding 
+Yay for the #100daysofcoding. Starting this project on the 24th day of the challenge.
