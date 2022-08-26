@@ -14,7 +14,7 @@ body {
   font-family: komet,sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #888C8C;
+  color: #F2F1E9;
 }
 
 body:before {
@@ -44,7 +44,7 @@ h1, h2 {
 }
 
 .fa-solid:hover {
-  color: #F2F1E9;
+  color: #2F403E;
 }
 
 section {
@@ -77,7 +77,22 @@ section .player video {
   height: auto;
 }
 
+.show-controls {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 241, 233, 0.5);
+  z-index: 99;
+  position: absolute;
+  bottom: 0;
+  cursor: default;
+  border-radius: 0 0 20px 20px;
+}
+
 .controls-container {
+  position: absolute;
+  max-width: 100%;
+  height: 95px;
+  margin-top: -95px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,14 +106,12 @@ section .player video {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0 2rem 1rem 2rem;
 }
 
 .controls-container .progress-range {
   height: 5px;
   width: 100%;
-  border-radius: 10px;
-  background-color: #888C8C;
+  background-color: #F2F1E9;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -107,12 +120,11 @@ section .player video {
 .controls-container .progress-range .progress-bar {
   height: 100%;
   width: 60%;
-  border-radius: 10px;
   background-color: #485958;
 }
 
 .controls-container .progress-range:hover {
-  background-color: #F2F1E9;
+  background-color: #888C8C;
 }
 
 .controls-container .control-group {
@@ -126,7 +138,7 @@ section .player video {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding-top: 1rem;
+  padding: 1rem 2rem;
 }
 
 .controls-container .control-group .controls-left {
@@ -160,7 +172,7 @@ section .player video {
   height: 5px;
   width: 75px;
   border-radius: 10px;
-  background-color: #888C8C;
+  background-color: #F2F1E9;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -177,7 +189,7 @@ section .player video {
 }
 
 .controls-container .control-group .controls-left .volume .volume-range:hover {
-  background-color: #F2F1E9;
+  background-color: #888C8C;
 }
 
 .controls-container .control-group .controls-right {
