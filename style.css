@@ -127,6 +127,10 @@ section .player video {
   background-color: #888C8C;
 }
 
+.controls-container .progress-range:hover .progress-bar {
+  background-color: #2F403E;
+}
+
 .controls-container .control-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -190,6 +194,10 @@ section .player video {
 
 .controls-container .control-group .controls-left .volume .volume-range:hover {
   background-color: #888C8C;
+}
+
+.controls-container .control-group .controls-left .volume .volume-range:hover .volume-bar {
+  background-color: #2F403E;
 }
 
 .controls-container .control-group .controls-right {
