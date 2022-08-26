@@ -23,7 +23,7 @@ body {
     font-family: komet,sans-serif;
     font-weight: 500;
     font-style: normal;
-    color: $light;
+    color: $grey;
     &:before {
         content: "";
         position: absolute;
@@ -45,7 +45,12 @@ h1, h2 {
 
 .fa-solid {
     font-size: 28px;
-    padding: 0.5rem
+    padding: 0.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+        color: $light;
+    }
 }
 
 section {
@@ -62,7 +67,6 @@ section {
             background: $dark-grey;
             border-radius: 20px;
             position: relative;
-            cursor: pointer;
             video {
                 border-radius: 20px;
                 width: 100%;
@@ -73,14 +77,63 @@ section {
 }
 // Controls
 .controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 0 2rem 1rem 2rem;
+    .progress-range {
+        height: 5px;
+        width: 100%;
+        border-radius: 10px;
+        background-color: $grey;
+        cursor: pointer;
+        transition: 0.3s;
+        .progress-bar {
+            height: 100%;
+            width: 60%;
+            border-radius: 10px;
+            background-color: $grey-two;
+        }
+        &:hover{
+            background-color: $light;
+        }
+    }
     .control-group {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 1rem 2rem;
+        padding-top: 1rem;
         .controls-left {
             display: flex;
             flex-direction: row;
+            .fa-pause {
+                display: none;
+            }
+            .volume {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .volume-range {
+                    height: 5px;
+                    width: 75px;
+                    border-radius: 10px;
+                    background-color: $grey;
+                    cursor: pointer;
+                    transition: 0.3s;
+                    .volume-bar {
+                        position: relative;
+                        background-color: $grey-two;
+                        width: 60%;
+                        height: 100%;
+                        border-radius: 10px;
+                        transition: width 0.2s ease-in;
+                    }
+                    &:hover{
+                        background-color: $light;
+                    }
+                }
+            }
         }
         .controls-right {
             display: flex;
@@ -108,6 +161,20 @@ section {
         .player {
             min-width: unset;
             max-width: 95vw;
+        }
+
+        .controls-container {
+            .control-group {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .controls-left {
+                    justify-content: center;
+                }
+                .controls-right {
+                    justify-content: center;
+                }
+            }
         }
     }
 }

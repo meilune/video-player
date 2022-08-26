@@ -14,7 +14,7 @@ body {
   font-family: komet,sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #F2F1E9;
+  color: #888C8C;
 }
 
 body:before {
@@ -38,6 +38,13 @@ h1, h2 {
 .fa-solid {
   font-size: 28px;
   padding: 0.5rem;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.fa-solid:hover {
+  color: #F2F1E9;
 }
 
 section {
@@ -62,13 +69,50 @@ section .player {
   background: #000D0C;
   border-radius: 20px;
   position: relative;
-  cursor: pointer;
 }
 
 section .player video {
   border-radius: 20px;
   width: 100%;
   height: auto;
+}
+
+.controls-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 2rem 1rem 2rem;
+}
+
+.controls-container .progress-range {
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #888C8C;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.controls-container .progress-range .progress-bar {
+  height: 100%;
+  width: 60%;
+  border-radius: 10px;
+  background-color: #485958;
+}
+
+.controls-container .progress-range:hover {
+  background-color: #F2F1E9;
 }
 
 .controls-container .control-group {
@@ -82,7 +126,7 @@ section .player video {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1rem 2rem;
+  padding-top: 1rem;
 }
 
 .controls-container .control-group .controls-left {
@@ -93,6 +137,47 @@ section .player video {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+.controls-container .control-group .controls-left .fa-pause {
+  display: none;
+}
+
+.controls-container .control-group .controls-left .volume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.controls-container .control-group .controls-left .volume .volume-range {
+  height: 5px;
+  width: 75px;
+  border-radius: 10px;
+  background-color: #888C8C;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.controls-container .control-group .controls-left .volume .volume-range .volume-bar {
+  position: relative;
+  background-color: #485958;
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-transition: width 0.2s ease-in;
+  transition: width 0.2s ease-in;
+}
+
+.controls-container .control-group .controls-left .volume .volume-range:hover {
+  background-color: #F2F1E9;
 }
 
 .controls-container .control-group .controls-right {
@@ -123,6 +208,28 @@ section .player video {
   section .player {
     min-width: unset;
     max-width: 95vw;
+  }
+  section .controls-container .control-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .controls-container .control-group .controls-left {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  section .controls-container .control-group .controls-right {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 /*# sourceMappingURL=style.css.map */
