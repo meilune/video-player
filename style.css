@@ -79,7 +79,7 @@ section .player video {
 
 .show-controls {
   width: 100%;
-  height: 100%;
+  height: 30%;
   background-color: rgba(242, 241, 233, 0.5);
   z-index: 99;
   position: absolute;
@@ -106,6 +106,9 @@ section .player video {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out 2s;
+  transition: all 0.5s ease-out 2s;
 }
 
 .controls-container .progress-range {
@@ -125,6 +128,9 @@ section .player video {
 
 .controls-container .progress-range:hover {
   background-color: #888C8C;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .controls-container .progress-range:hover .progress-bar {
