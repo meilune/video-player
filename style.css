@@ -79,13 +79,11 @@ section .player video {
 
 .show-controls {
   width: 100%;
-  height: 30%;
-  background-color: rgba(242, 241, 233, 0.5);
+  height: 40%;
   z-index: 99;
   position: absolute;
   bottom: 0;
   cursor: default;
-  border-radius: 0 0 20px 20px;
 }
 
 .controls-container {
@@ -93,6 +91,8 @@ section .player video {
   max-width: 100%;
   height: 95px;
   margin-top: -95px;
+  background-color: rgba(242, 241, 233, 0.5);
+  border-radius: 0 0 20px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -112,7 +112,7 @@ section .player video {
 }
 
 .controls-container .progress-range {
-  height: 5px;
+  height: 7px;
   width: 100%;
   background-color: #F2F1E9;
   cursor: pointer;
@@ -214,6 +214,27 @@ section .player video {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.controls-container .control-group .controls-right .speed select {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.controls-container .control-group .controls-right .speed select option {
+  background-color: #2F403E !important;
+}
+
+.controls-container .control-group .controls-right .speed select, .controls-container .control-group .controls-right .speed option {
+  cursor: pointer;
+  color: #F2F1E9;
+}
+
+.controls-container .control-group .controls-right .speed select:focus, .controls-container .control-group .controls-right .speed option:focus {
+  outline: none;
 }
 
 .controls-container .control-group .controls-right .time {
