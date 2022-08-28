@@ -107,8 +107,8 @@ section .player video {
       -ms-flex-pack: justify;
           justify-content: space-between;
   opacity: 0;
-  -webkit-transition: all 0.5s ease-out 2s;
-  transition: all 0.5s ease-out 2s;
+  -webkit-transition: all 0.2s ease-out 1.5s;
+  transition: all 0.2s ease-out 1.5s;
 }
 
 .controls-container .progress-range {
@@ -128,9 +128,6 @@ section .player video {
 
 .controls-container .progress-range:hover {
   background-color: #888C8C;
-  opacity: 1;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
 }
 
 .controls-container .progress-range:hover .progress-bar {
@@ -221,6 +218,12 @@ section .player video {
 
 .controls-container .control-group .controls-right .time {
   padding: 0 1rem;
+}
+
+.controls-container:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 @media screen and (max-width: 800px) {
