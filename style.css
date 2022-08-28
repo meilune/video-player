@@ -158,10 +158,6 @@ section .player video {
           flex-direction: row;
 }
 
-.controls-container .control-group .controls-left .fa-pause {
-  display: none;
-}
-
 .controls-container .control-group .controls-left .volume {
   display: -webkit-box;
   display: -ms-flexbox;
