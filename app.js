@@ -11,20 +11,28 @@ const fullscreenBtn = document.querySelector(".fullscreen");
 
 // Play & Pause --------------------------------//
 
-function togglePlay(e) {
+function showPlayIcon() {
+    playBtn.classList.replace("fa-pause", "fa-play");
+    playBtn.setAttribute("title", "Play");
+}
+
+function togglePlay() {
     if(video.paused) {
         video.play();
         playBtn.classList.replace("fa-play", "fa-pause");
         playBtn.setAttribute("title", "Pause");
-       console.log(e);
     } else {
         video.pause();
-        playBtn.classList.replace("fa-pause", "fa-play");
-        playBtn.setAttribute("title", "Play");
-        console.log(e);
+        showPlayIcon();
     }
+    return false;
 }
 
+// On Video End, show play button
+video.addEventListener("ended", showPlayIcon);
+
+
+// video.onclick = togglePlay();
 
 
 // Progress Bar --------------------------------//
@@ -36,7 +44,13 @@ function togglePlay(e) {
 // Fullscreen ---------------------------------------//
 
 // Event Listeners -------------------------------- //
-playBtn.addEventListener("click", togglePlay);
-video.addEventListener("click", togglePlay, false);
-
-
+playBtn.addEventListener("click", togglePlay, false);
+video.addEventListener("play", function() { 
+    video.play();
+    playBtn.classList.replace("fa-play", "fa-pause");
+    playBtn.setAttribute("title", "Pause");
+ }, false);
+ video.addEventListener("pause", function() { 
+    video.pause();
+    showPlayIcon();
+ }, false);

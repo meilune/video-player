@@ -85,6 +85,12 @@ section {
     cursor: default;
 }
 
+//Remove original controls on Chrome browsers
+video::-webkit-media-controls-panel { 
+    display: none ! important; 
+    opacity: 1 ! important;
+}
+
 .controls-container {
     position: absolute;
     max-width: 100%;

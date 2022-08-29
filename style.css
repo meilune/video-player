@@ -86,6 +86,11 @@ section .player video {
   cursor: default;
 }
 
+video::-webkit-media-controls-panel {
+  display: none !important;
+  opacity: 1 !important;
+}
+
 .controls-container {
   position: absolute;
   max-width: 100%;
