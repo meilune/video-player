@@ -9,8 +9,10 @@ const currentTime = document.querySelector(".time-elapsed");
 const duration = document.querySelector(".time-duration");
 const fullscreenBtn = document.querySelector(".fullscreen");
 
-// Play & Pause --------------------------------//
+// video.controls = "";
 
+// Play & Pause --------------------------------//
+//Play Icon showing
 function showPlayIcon() {
     playBtn.classList.replace("fa-pause", "fa-play");
     playBtn.setAttribute("title", "Play");
@@ -28,16 +30,47 @@ function togglePlay() {
     return false;
 }
 
+//Play/pause video on click
+video.onclick = () => {
+    if(video.paused) {
+        video.play();
+        playBtn.classList.replace("fa-play", "fa-pause");
+        playBtn.setAttribute("title", "Pause");
+    } else {
+        video.pause();
+        showPlayIcon();
+    }
+}
+
 // On Video End, show play button
 video.addEventListener("ended", showPlayIcon);
 
-
-// video.onclick = togglePlay();
-
-
 // Progress Bar --------------------------------//
 
+//Calculate display time format
+function displayTime(time) {
+    const minutes = Math.floor(time / 60);
+    let seconds = Math.floor(time % 60);
+    seconds = seconds > 9 ? seconds : `0${seconds}`;
+    return `${minutes}:${seconds}`
+}
+
+//Update progress bar as the video plays
+function updateProgress() {
+    progressBar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+    currentTime.textContent = `${displayTime(video.currentTime)} / `;
+    duration.textContent = `${displayTime(video.duration)}`
+}
+
+// To click to seek
+function setProgress(e) {
+    const newTime = e.offsetX / progressRange.offsetWidth;
+    video.currentTime = (newTime * video.duration);
+}
+
 // Volume Controls --------------------------------//
+
+
 
 // Change Playback Speed --------------------------------//
 
@@ -45,12 +78,6 @@ video.addEventListener("ended", showPlayIcon);
 
 // Event Listeners -------------------------------- //
 playBtn.addEventListener("click", togglePlay, false);
-video.addEventListener("play", function() { 
-    video.play();
-    playBtn.classList.replace("fa-play", "fa-pause");
-    playBtn.setAttribute("title", "Pause");
- }, false);
- video.addEventListener("pause", function() { 
-    video.pause();
-    showPlayIcon();
- }, false);
+video.addEventListener('timeupdate', updateProgress);
+video.addEventListener('canplay', updateProgress);
+progressRange.addEventListener('click', setProgress);
