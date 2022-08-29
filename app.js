@@ -12,35 +12,32 @@ const fullscreenBtn = document.querySelector(".fullscreen");
 // video.controls = "";
 
 // Play & Pause --------------------------------//
+
 //Play Icon showing
 function showPlayIcon() {
     playBtn.classList.replace("fa-pause", "fa-play");
     playBtn.setAttribute("title", "Play");
 }
 
+//Pause Icon showing
+function showPauseIcon() {
+    playBtn.classList.replace("fa-play", "fa-pause");
+    playBtn.setAttribute("title", "Pause");
+}
+
+// Function for video playing
 function togglePlay() {
     if(video.paused) {
         video.play();
-        playBtn.classList.replace("fa-play", "fa-pause");
-        playBtn.setAttribute("title", "Pause");
+        showPauseIcon();
     } else {
         video.pause();
         showPlayIcon();
     }
-    return false;
 }
 
-//Play/pause video on click
-video.onclick = () => {
-    if(video.paused) {
-        video.play();
-        playBtn.classList.replace("fa-play", "fa-pause");
-        playBtn.setAttribute("title", "Pause");
-    } else {
-        video.pause();
-        showPlayIcon();
-    }
-}
+//Play/pause video on a click, this needed to be added because after removing standard controls, the video tag element event listener wouldn't work as expected.
+video.onclick = () => togglePlay();
 
 // On Video End, show play button
 video.addEventListener("ended", showPlayIcon);
@@ -62,7 +59,7 @@ function updateProgress() {
     duration.textContent = `${displayTime(video.duration)}`
 }
 
-// To click to seek
+// To click to seek (Chrome seems to have a bug that won't allow this to work)
 function setProgress(e) {
     const newTime = e.offsetX / progressRange.offsetWidth;
     video.currentTime = (newTime * video.duration);
