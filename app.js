@@ -124,6 +124,7 @@ function openFullscreen(elem) {
     } else if (elem.msRequestFullscreen) { /* IE11 */
       elem.msRequestFullscreen();
     }
+    player.classList.add("video-fullscreen");
   }
 
   /* Close fullscreen */
@@ -135,18 +136,14 @@ function closeFullscreen() {
     } else if (document.msExitFullscreen) { /* IE11 */
       document.msExitFullscreen();
     }
+    player.classList.remove("video-fullscreen");
   }
 
   let fullscreen = false;
 
   // Toggle fullscreen
   function toggleFullscreen() {
-    if(!fullscreen) {
-        openFullscreen(player);
-        player.classList.add("video-fullscreen");
-    } else {
-        closeFullscreen();
-    }
+    !fullscreen ? openFullscreen(player) : closeFullscreen();
     fullscreen = !fullscreen;
   }
 
