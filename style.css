@@ -64,7 +64,6 @@ section {
 
 section .player {
   min-width: 800px;
-  max-width: 70vw;
   border: #000D0C 5px solid;
   background: #000D0C;
   border-radius: 20px;
@@ -241,6 +240,18 @@ section .player video {
   opacity: 1;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
+}
+
+.video-fullscreen {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 @media screen and (max-width: 800px) {

@@ -62,7 +62,6 @@ section {
     height: 100vh;
         .player {
             min-width: 800px;
-            max-width: 70vw;
             border: $dark-grey 5px solid;
             background: $dark-grey;
             border-radius: 20px;
@@ -184,6 +183,15 @@ section {
         transition: all 0.2s ease-in;
     }
 }
+
+// Fullscreen
+.video-fullscreen {
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
 
 @media screen and (max-width: 800px) {
     section {
